@@ -6,20 +6,27 @@ use CodeIgniter\Model;
 
 class SeanceModel extends Model
 {
-    protected $table = 'Seances';
+    protected $table      = 'seances';
     protected $primaryKey = 'id_seance';
-    protected $allowedFields = ['id_film', 'date_heure', 'places_disponibles'];
 
-    // Méthode pour obtenir les séances pour un film spécifique
-    public function getSeancesByFilmId($id_film)
+    // Ajoutez 'prix' à la liste des champs autorisés
+    protected $allowedFields = ['id_film', 'date_heure', 'places_disponibles', 'prix'];
+
+    // Récupère toutes les séances
+    public function getAllSeances()
     {
-        return $this->where('id_film', $id_film)->findAll();
+        return $this->findAll();
     }
 
-    public function updatePlacesDisponibles($id_seance, int $places)
+    // Récupère une séance par son ID
+    public function getSeanceById($id)
     {
-        return $this->set('places_disponibles', $places)
-                    ->where('id_seance', $id_seance)
-                    ->update();
+        return $this->find($id);
+    }
+
+    // Ajoutez une fonction pour récupérer les séances filtrées par prix, si nécessaire
+    public function getSeancesByPrix($prix)
+    {
+        return $this->where('prix', $prix)->findAll();
     }
 }

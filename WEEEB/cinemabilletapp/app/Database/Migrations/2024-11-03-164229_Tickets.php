@@ -51,6 +51,13 @@ class Tickets extends Migration
                 'null'       => true,
                 'default'    => 0,
             ],
+            // Ajout de la colonne prix
+            'prix' => [
+                'type'       => 'DECIMAL',
+                'constraint' => '10,2', // Format décimal avec 2 décimales pour le prix
+                'null'       => true,
+                'default'    => null,
+            ],
         ]);
 
         $this->forge->addKey('id_ticket', true); // Définir `id_ticket` comme clé primaire
@@ -59,6 +66,6 @@ class Tickets extends Migration
 
     public function down()
     {
-        //
+        $this->forge->dropTable('tickets');
     }
 }

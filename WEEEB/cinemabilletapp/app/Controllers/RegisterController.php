@@ -29,7 +29,7 @@ class RegisterController extends Controller
             return redirect()->back()->withInput()->with('errors', $validation->getErrors());
         }
     
-        // Inscrire un utilisateur avec le rôle de client
+        // Inscrire un utilisateur avec le rôle de client 
         $model = new UserModel();
         $data = [
             'username' => $this->request->getPost('username'),

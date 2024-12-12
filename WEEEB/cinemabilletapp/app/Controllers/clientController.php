@@ -74,7 +74,7 @@ class clientController extends BaseController
         $seance_id = $request->getPost('seance');
         $place_numero = $request->getPost('place');
         $nom_film = $request->getPost('nom_film'); // Récupérer le nom du film
-        
+        $prix = $request->getPost('prix'); 
         // Récupérer les informations de la séance
         $seance = $seanceModel->find($seance_id);
     
@@ -107,6 +107,7 @@ class clientController extends BaseController
             'nom_film' => $nom_film,
             'place_numero' => $place_numero,
             'code_reservation' => $code_reservation,
+            'prix'=>$prix
         ]);
     
         // Enregistrer la place réservée dans `place_reserver`
@@ -128,7 +129,8 @@ class clientController extends BaseController
             'nom_film' => $nom_film,
             'date_heure' => $seance['date_heure'],
             'place_numero' => $place_numero,
-            'code_reservation' => $code_reservation
+            'code_reservation' => $code_reservation,
+            'prix'=>$prix
         ];
   
         // Envoyer l'email
@@ -171,6 +173,7 @@ class clientController extends BaseController
             <p>Merci d'avoir réservé pour le film <strong>{$ticketDetails['nom_film']}</strong>.</p>
             <p><strong>Séance :</strong> {$ticketDetails['date_heure']}</p>
             <p><strong>Place :</strong> {$ticketDetails['place_numero']}</p>
+            <p><strong>Prix :</strong> {$ticketDetails['prix']}</p>
             <p><strong>Code de réservation :</strong> {$ticketDetails['code_reservation']}</p>
         ");
     

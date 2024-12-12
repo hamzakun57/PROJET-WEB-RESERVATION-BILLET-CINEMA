@@ -27,7 +27,7 @@
             width: 100%;
         }
         h1 {
-            color: #28a745; /* Vert pour le titre */
+            color: #dc3545; /* Rouge pour le titre */
         }
         p {
             color: #bbb; /* Texte légèrement gris pour le contraste */
@@ -36,14 +36,14 @@
             display: inline-block;
             margin: 10px 0;
             padding: 10px 20px;
-            background-color: #28a745; /* Vert pour les boutons */
+            background-color: #dc3545; /* Rouge pour les boutons */
             color: #fff; /* Texte blanc */
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
         a:hover {
-            background-color: #1e7e34; /* Vert plus foncé au survol */
+            background-color: #b02a37; /* Rouge plus foncé au survol */
         }
     </style>
 </head>

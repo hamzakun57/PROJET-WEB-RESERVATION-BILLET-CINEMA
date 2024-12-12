@@ -55,23 +55,13 @@
             background-color: #218838;
             transform: scale(1.02); /* Légère mise en relief au hover */
         }
-        .alert {
-            border-radius: 8px; /* Arrondi des alertes */
-        }
-        .alert-success {
-            background-color: #28a745;
-            color: #fff;
-        }
-        .alert-danger {
+        .btn-danger {
             background-color: #dc3545;
-            color: #fff;
-        }
-        label {
+            border-color: #dc3545;
             font-weight: bold;
         }
-        .form-text {
-            font-size: 0.9em;
-            color: #ccc;
+        .btn-danger:hover {
+            background-color: #b02a37;
         }
     </style>
 </head>
@@ -118,8 +108,10 @@
                 <div class="invalid-feedback">Veuillez confirmer le mot de passe.</div>
             </div>
 
-            <button type="submit" class="btn btn-primary">S'inscrire</button>
+            <button type="submit" class="btn btn-danger mt-3" style="width: 100%; text-align: center;">S'inscrire</button>
         </form>
+        <!-- Bouton rouge pour "Se connecter" -->
+        <a href="/login" class="btn btn-danger mt-3" style="width: 100%; text-align: center;">Se connecter</a>
     </div>
 
     <!-- Lien vers Bootstrap JS et dépendances -->

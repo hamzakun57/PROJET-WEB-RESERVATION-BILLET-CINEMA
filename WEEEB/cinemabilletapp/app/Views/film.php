@@ -13,25 +13,21 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Cinema Uiz</a>
-            <!-- Navbar-->
-            <form class="d-flex"> 
-    <button class="btn" style="background-color: #28a745; color: white; border: none; margin-left: 910px" type="button" onclick="window.location.href='<?= base_url('/logout') ?>'">
-        <i class="bi-person-circle me-2"></i>
-        Déconnexion
-    </button>
-</form>
-
+            <a class="navbar-brand ps-3" href="<?= base_url('/films') ?>">Cinema Uiz</a>
+            <form class="d-flex">
+                <button class="btn" style="background-color: #28a745; color: white; border: none; margin-left: 910px" type="button" onclick="window.location.href='<?= base_url('/logout') ?>'">
+                    <i class="bi-person-circle me-2"></i>
+                    Déconnexion
+                </button>
+            </form>
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                           
-                            <a class="nav-link" href="/films" a-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-sidenav-menu-heading"></div>
+                            <a class="nav-link" href="<?= base_url('/films') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Films
                             </a>
@@ -43,11 +39,42 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Ticket
                             </a>
-                        
+                        </div>
+                    </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                
+            <main class="container mt-4">
+    <h1 class="text-center mb-4 text-danger">Liste des Films</h1>
+    <a href="/films/Ajouter" class="btn btn-danger mb-3">Ajouter un film</a>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nom du Film</th>
+                <th>Genre</th>
+                <th>Durée</th>
+                <th>Affiche</th>
+                <th>Détails</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($films as $film): ?>
+                <tr>
+                    <td><?= $film['nom_film']; ?></td>
+                    <td><?= $film['genre']; ?></td>
+                    <td><?= $film['duree']; ?> minutes</td>
+                    <td>
+                        <img src="<?= base_url('uploads/' . $film['affiche']); ?>" alt="Affiche de <?= $film['nom_film']; ?>" class="img-fluid" style="max-width: 100px;">
+                    </td>
+                    <td>
+                        <a href="<?= base_url('films/details/' . $film['id_film']); ?>" class="btn btn-info">Détails</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</main>
+
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">

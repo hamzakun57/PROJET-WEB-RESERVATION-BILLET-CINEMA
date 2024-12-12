@@ -7,7 +7,6 @@
     <!-- Lien vers Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        
         body {
             background-color: #000; /* Fond noir */
             color: #fff; /* Texte blanc */
@@ -39,21 +38,22 @@
         }
         .form-control:focus {
             background-color: #444;
-            border-color: #28a745; /* Bordure verte au focus */
-            box-shadow: 0 0 5px rgba(40, 167, 69, 0.8); /* Légère ombre verte */
+            border-color: #dc3545; /* Bordure rouge au focus */
+            box-shadow: 0 0 5px rgba(220, 53, 69, 0.8); /* Légère ombre rouge */
         }
-        .btn-primary {
-            background-color: #28a745;
-            border-color: #28a745;
+        .btn-primary, .btn-secondary {
+            background-color: #dc3545; /* Rouge pour le bouton */
+            border-color: #dc3545;
             border-radius: 8px; /* Arrondi des boutons */
             padding: 10px;
             font-size: 16px;
             font-weight: bold;
             width: 100%;
+            margin-top: 10px; /* Espacement entre les boutons */
             transition: background-color 0.3s ease, transform 0.2s ease; /* Animation fluide */
         }
-        .btn-primary:hover {
-            background-color: #218838;
+        .btn-primary:hover, .btn-secondary:hover {
+            background-color: #b02a37; /* Rouge plus foncé au survol */
             transform: scale(1.02); /* Légère mise en relief au hover */
         }
         .alert {
@@ -97,8 +97,8 @@
 
             <button type="submit" class="btn btn-primary">Connexion</button>
         </form>
+        <a href="/register" class="btn btn-secondary">S'inscrire</a>
     </div>
-
     <!-- Lien vers Bootstrap JS et dépendances -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 

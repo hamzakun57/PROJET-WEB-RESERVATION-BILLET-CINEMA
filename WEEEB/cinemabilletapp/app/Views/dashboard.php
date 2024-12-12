@@ -102,7 +102,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand fw-bold" href="#!">Cinema uiz</a>
+        <a class="navbar-brand ps-3" href="<?= base_url('/') ?>">Cinema Uiz</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex ms-auto">
                     <button class="btn btn-outline-dark" type="button" onclick="window.location.href='<?= base_url('/choix') ?>'">

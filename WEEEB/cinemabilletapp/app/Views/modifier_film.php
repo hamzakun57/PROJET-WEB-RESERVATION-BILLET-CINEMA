@@ -14,7 +14,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Cinema Uiz</a>
+            <a class="navbar-brand ps-3" href="<?= base_url('/films') ?>">Cinema Uiz</a>
             <!-- Navbar-->
             <form class="d-flex"> 
     <button class="btn" style="background-color: #28a745; color: white; border: none; margin-left: 910px" type="button" onclick="window.location.href='<?= base_url('/logout') ?>'">
@@ -43,19 +43,49 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Ticket
                             </a>
-                        
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                
+            <main class="container mt-5">
+    <h3 class="text-center mb-4 text-danger">Modification du Film</h3>
+
+    <form action="/films/Modifier/<?= $film['id_film']; ?>" method="POST" enctype="multipart/form-data" class="row g-3">
+        <div class="col-md-6">
+            <label for="nom_film" class="form-label">Nom du Film :</label>
+            <input type="text" name="nom_film" id="nom_film" class="form-control" value="<?= $film['nom_film']; ?>" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="genre" class="form-label">Genre :</label>
+            <input type="text" name="genre" id="genre" class="form-control" value="<?= $film['genre']; ?>" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="duree" class="form-label">Durée :</label>
+            <input type="text" name="duree" id="duree" class="form-control" value="<?= $film['duree']; ?>" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="affiche" class="form-label">Affiche :</label>
+            <input type="file" name="affiche" id="affiche" class="form-control">
+            <!-- Champ caché pour l'affiche existante -->
+            <input type="hidden" name="existing_affiche" value="<?= $film['affiche']; ?>">
+        </div>
+
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </div>
+    </form>
+</main>
+
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div class="text-muted">Copyright &copy; Cinema Uiz</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="#"></a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="#"> </a>
                             </div>
                         </div>
                     </div>

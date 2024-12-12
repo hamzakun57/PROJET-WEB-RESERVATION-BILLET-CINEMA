@@ -18,7 +18,7 @@ class Email extends BaseConfig
      // Configuration du serveur SMTP (ici pour Gmail)
      public $SMTPHost = 'smtp.gmail.com';  // Serveur SMTP
      public $SMTPUser = 'uizcinema@gmail.com';  // Votre adresse e-mail Gmail
-     public $SMTPPass = 'krfv fknb dadh fmqz'; // Mot de passe de votre compte Gmail
+     public $SMTPPass = 'gsif yxsr mmmi mqxz'; // Mot de passe de votre compte Gmail
      public $SMTPPort = 587;  // Port SMTP (587 pour TLS, 465 pour SSL)
      public $SMTPCrypto = 'tls'; // Utilisation de TLS pour sécuriser la connexion
  

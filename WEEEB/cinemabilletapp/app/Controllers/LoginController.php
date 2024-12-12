@@ -35,7 +35,7 @@ class LoginController extends Controller
 
                 // Rediriger en fonction du rôle
                 if ($user['role'] === 'admin') {
-                    return redirect()->to('/admin-dashboard');
+                    return redirect()->to('/films');
                 } else {
                     return redirect()->to('/dashboard');
                 }
